@@ -14,7 +14,7 @@ router = APIRouter(
 )
 
 
-@router.post("/")
+@router.post("")
 async def logout(
         image: UploadFile = File(...)
 ):

@@ -6,4 +6,4 @@ from googletrans import Translator
 translator = Translator()
 
 def translate(si_text: str):
-    output = translator.translate(si_text, dest=cl)
+    return translator.translate(si_text, dest=cl)

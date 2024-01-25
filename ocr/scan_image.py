@@ -32,3 +32,33 @@ def sort_contours(cnts, method="left-to-right"):
     return (cnts, boundingBoxes)
 
 
+def get_letters(img):
+    letters = []
+    image = cv2.imread(img,0)
+    # gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    ret,thresh1 = cv2.threshold(image ,127,255,cv2.THRESH_BINARY)
+    dilated = cv2.dilate(thresh1, None, iterations=2)
+
+    cnts = cv2.findContours(dilated.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+    cnts = imutils.grab_contours(cnts)
+    cnts = sort_contours(cnts, method="left-to-right")[0]
+    # loop over the contours
+    for c in cnts:
+        if cv2.contourArea(c) > 10:
+            (x, y, w, h) = cv2.boundingRect(c)
+            x-=5
+            y-=5
+            w+=10
+            h+=10
+            # cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 255), 2)
+        roi = image[y:y + h, x:x + w]
+        thresh = cv2.threshold(image, 0, 255,cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
+        thresh = cv2.resize(thresh, (80, 80), interpolation = cv2.INTER_CUBIC)
+        thresh = thresh.astype("float32") / 255.0
+        thresh = np.expand_dims(thresh, axis=-1)
+        thresh = thresh.reshape(1,80,80,1)
+        ypred = model.predict(thresh)
+        ypred = LB.inverse_transform(ypred)
+        [x] = ypred
+        letters.append(x)
+    return letters, image

@@ -1,6 +1,3 @@
-from tkinter import messagebox
-from tkinter import messagebox
-
 from googletrans import Translator
 
 translator = Translator()

@@ -1,4 +1,3 @@
-from googletrans import Translator
 from tkinter import messagebox
 from tkinter import messagebox
 

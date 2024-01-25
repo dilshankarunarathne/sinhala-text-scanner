@@ -31,12 +31,15 @@ def sort_contours(cnts, method="left-to-right"):
 def get_letters(image):
     letters = []
 
-    ret,thresh1 = cv2.threshold(image ,127,255,cv2.THRESH_BINARY)
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    ret, thresh1 = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
     dilated = cv2.dilate(thresh1, None, iterations=2)
 
-    cnts = cv2.findContours(dilated.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+    cnts = cv2.findContours(dilated.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     cnts = imutils.grab_contours(cnts)
     cnts = sort_contours(cnts, method="left-to-right")[0]
+
     # loop over the contours
     for c in cnts:
         if cv2.contourArea(c) > 10:

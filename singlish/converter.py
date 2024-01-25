@@ -13,4 +13,5 @@ def singlish_to_english(singlish_text: str) -> str:
         return "Error: Unable to convert text"
 
 
-
+if __name__ == "__main__":
+    print(singlish_to_english("මම ආයුබෝවන්"))

@@ -10,8 +10,9 @@ def singlish_to_english(singlish_text: str) -> str:
     if response.status_code == 200:
         return response.text
     else:
+        print(response.status_code)
         return "Error: Unable to convert text"
 
 
 if __name__ == "__main__":
-    print(singlish_to_english("ආයුබෝවන්"))
+    print(singlish_to_english("aayuboewan"))

@@ -35,7 +35,6 @@ def sort_contours(cnts, method="left-to-right"):
 def get_letters(image):
     letters = []
 
-    # gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     ret,thresh1 = cv2.threshold(image ,127,255,cv2.THRESH_BINARY)
     dilated = cv2.dilate(thresh1, None, iterations=2)
 
@@ -52,7 +51,7 @@ def get_letters(image):
             h+=10
             # cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 255), 2)
         roi = image[y:y + h, x:x + w]
-        thresh = cv2.threshold(image, 0, 255,cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
+        ret, thresh = cv2.threshold(roi, 0, 255,cv2.THRESH_BINARY | cv2.THRESH_OTSU)  # use the second element of the tuple
         thresh = cv2.resize(thresh, (80, 80), interpolation = cv2.INTER_CUBIC)
         thresh = thresh.astype("float32") / 255.0
         thresh = np.expand_dims(thresh, axis=-1)

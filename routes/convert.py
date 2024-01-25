@@ -16,6 +16,6 @@ router = APIRouter(
 
 @router.post("/")
 async def logout(
-        token: str = Depends(oauth2_scheme)
+        image: File(...),
 ):
     return {"message": "Successfully logged out"}

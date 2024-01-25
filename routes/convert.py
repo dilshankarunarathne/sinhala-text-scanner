@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-from fastapi import APIRouter, File
+from fastapi import APIRouter, File, UploadFile
 
 from ocr.scan_image import scan_image
 from singlish.converter import singlish_to_english
@@ -16,7 +16,7 @@ router = APIRouter(
 
 @router.post("/")
 async def logout(
-        image: File(...),
+        image: UploadFile = File(...)
 ):
     if image and image.content_type != "image/jpeg":
         return {300: {"description": "Only jpeg images are supported"}}

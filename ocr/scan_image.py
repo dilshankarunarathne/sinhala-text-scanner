@@ -33,9 +33,9 @@ def sort_contours(cnts, method="left-to-right"):
     return (cnts, boundingBoxes)
 
 
-def get_letters(img):
+def get_letters(image):
     letters = []
-    image = cv2.imread(img,0)
+    
     # gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     ret,thresh1 = cv2.threshold(image ,127,255,cv2.THRESH_BINARY)
     dilated = cv2.dilate(thresh1, None, iterations=2)

@@ -9,10 +9,6 @@ LB = pickle.load(open('models/label_binarizer.pkl', 'rb'))
 
 
 def scan_image(img):
-    # img = cv2.resize(img, (80, 80))
-    # img_array = np.expand_dims(img, axis=0)
-    # img_array = img_array / 255.0
-
     prediction = get_letters(img)
 
     predicted_label = LB.inverse_transform(prediction)

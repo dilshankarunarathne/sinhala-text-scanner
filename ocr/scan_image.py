@@ -23,14 +23,3 @@ def scan_image(img):
     # Get the class label
     predicted_label = LB.inverse_transform(prediction)
     return predicted_label
-
-# Preprocess the image
-img = cv2.resize(img, (80,80))
-img_array = np.expand_dims(img, axis=0)
-img_array = img_array / 255.0
-
-# Make a prediction
-prediction = model.predict(img_array)
-
-# Get the class label
-predicted_label = LB.inverse_transform(prediction)

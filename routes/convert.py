@@ -11,4 +11,4 @@ router = APIRouter(
 async def logout(
         image: File(...),
 ):
-    return {"message": ""}
+    return {"message": "Image uploaded..."}

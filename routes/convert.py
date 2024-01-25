@@ -21,6 +21,6 @@ async def logout(
         nparray = np.fromstring(contents, np.uint8)
         img = cv2.imdecode(nparray, cv2.IMREAD_COLOR)
 
-        
+        singlish_text = scan_image(img)
 
     return {"message": "Image uploaded..."}

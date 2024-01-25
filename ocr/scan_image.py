@@ -9,7 +9,7 @@ LB = pickle.load(open('models/label_binarizer.pkl', 'rb'))
 
 
 def scan_image(img):
-    prediction = get_letters(img)
+    prediction, _ = get_letters(img)
 
     predicted_label = LB.inverse_transform(prediction)
     return predicted_label

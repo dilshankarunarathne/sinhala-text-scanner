@@ -4,14 +4,6 @@ from tkinter import ttk
 from googletrans import Translator
 from tkinter import messagebox
 
-root = tk.Tk()
-root.title('language Translator')
-root.geometry('590x370')
-
-frame1 = Frame(root, width=590, height=370, relief=RIDGE, borderwidth=5, bg='#d0d0f5')
-frame1.place(x=0, y=0)
-
-Label(root, text="Language Translator", font=("Helvetica 20 bold"), fg='black', bg='#d0d0f5').pack(pady=10)
 
 
 def translate():
@@ -26,10 +18,6 @@ def translate():
         output = translator.translate(lang_1, dest=cl)
         text_entry2.insert('end', output.text)
 
-
-def clear():
-    text_entry1.delete(1.0, 'end')
-    text_entry2.delete(1.0, 'end')
 
 
 a = tk.StringVar()

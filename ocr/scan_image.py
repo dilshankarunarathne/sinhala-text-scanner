@@ -13,7 +13,7 @@ def scan_image(img):
     # img_array = np.expand_dims(img, axis=0)
     # img_array = img_array / 255.0
 
-    img_array = cv2.imread(img,0)
+    img_array = img  # use the passed image array directly
 
     prediction = get_letters(img_array)
 

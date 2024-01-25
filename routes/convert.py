@@ -18,5 +18,4 @@ router = APIRouter(
 async def logout(
         token: str = Depends(oauth2_scheme)
 ):
-    blacklist_token(token)
     return {"message": "Successfully logged out"}

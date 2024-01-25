@@ -21,10 +21,10 @@ async def logout(
         nparray = np.fromstring(contents, np.uint8)
         img = cv2.imdecode(nparray, cv2.IMREAD_COLOR)
 
-        singlish_text = scan_image(img)
+    singlish_text = scan_image(img)
 
-        english_text = singlish_to_english(singlish_text)
+    english_text = singlish_to_english(singlish_text)
 
-        final_text = translate_text(english_text)
+    final_text = translate_text(english_text)
 
     return {"text": final_text}

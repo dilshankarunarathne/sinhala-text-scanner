@@ -19,9 +19,6 @@ def translate():
         text_entry2.insert('end', output.text)
 
 
-
-a = tk.StringVar()
-
 auto_select = ttk.Combobox(frame1, width=27, textvariable=a, state='randomly', font=('verdana', 10, 'bold'))
 
 auto_select['values'] = (

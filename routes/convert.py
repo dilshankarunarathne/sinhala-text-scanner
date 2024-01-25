@@ -3,6 +3,8 @@ import numpy as np
 
 from fastapi import APIRouter, File
 
+from translate.translator import translate_text
+
 router = APIRouter(
     prefix="/api/convert",
     tags=["convert"],

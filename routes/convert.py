@@ -23,4 +23,6 @@ async def logout(
 
         singlish_text = scan_image(img)
 
+        
+
     return {"message": "Image uploaded..."}

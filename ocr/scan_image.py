@@ -12,6 +12,8 @@ def scan_image(img):
     prediction, _ = get_letters(img)
 
     predicted_label = LB.inverse_transform(prediction)
+
+    print("Model prediction: ", predicted_label)
     return predicted_label
 
 

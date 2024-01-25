@@ -29,13 +29,12 @@ def sort_contours(cnts, method="left-to-right"):
     boundingBoxes = [cv2.boundingRect(c) for c in cnts]
     (cnts, boundingBoxes) = zip(*sorted(zip(cnts, boundingBoxes),
     key=lambda b:b[1][i], reverse=reverse))
-    # return the list of sorted contours and bounding boxes
     return (cnts, boundingBoxes)
 
 
 def get_letters(image):
     letters = []
-    
+
     # gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     ret,thresh1 = cv2.threshold(image ,127,255,cv2.THRESH_BINARY)
     dilated = cv2.dilate(thresh1, None, iterations=2)

@@ -23,6 +23,6 @@ async def logout(
 
         singlish_text = scan_image(img)
 
-        english_text = 
+        english_text = singlish_to_english(singlish_text)
 
     return {"message": "Image uploaded..."}

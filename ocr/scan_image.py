@@ -11,7 +11,18 @@ LB = pickle.load(open('label_binarizer.pkl', 'rb'))
 img = cv2.imread('test.jpg',0)
 
 
+def scan_image(img):
+    # Preprocess the image
+    img = cv2.resize(img, (80, 80))
+    img_array = np.expand_dims(img, axis=0)
+    img_array = img_array / 255.0
 
+    # Make a prediction
+    prediction = model.predict(img_array)
+
+    # Get the class label
+    predicted_label = LB.inverse_transform(prediction)
+    return predicted_label
 
 # Preprocess the image
 img = cv2.resize(img, (80,80))

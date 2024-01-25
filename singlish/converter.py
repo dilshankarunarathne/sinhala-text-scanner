@@ -11,8 +11,8 @@ def singlish_to_english(singlish_text: str) -> str:
     if response.status_code == 200:
         print("Singlish translation: ", response.text)
         return response.text
-    else: # TODO bug 406
-        print(response.status_code)
+    else: 
+        print(response.text)
         return "Error: Unable to convert text"
 
 

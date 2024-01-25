@@ -20,4 +20,4 @@ def singlish_to_english(singlish_text: str) -> str:
 
 
 if __name__ == "__main__":
-    print(singlish_to_english("aayuboewan"))
+    print(singlish_to_english("aayuboowan"))

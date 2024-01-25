@@ -3,8 +3,8 @@ import numpy as np
 from keras.models import load_model
 import pickle
 
-model = load_model('sinhala_model_final.h5')
-LB = pickle.load(open('label_binarizer.pkl', 'rb'))
+model = load_model('models/sinhala_model_final.h5')
+LB = pickle.load(open('models/label_binarizer.pkl', 'rb'))
 
 
 def scan_image(img):

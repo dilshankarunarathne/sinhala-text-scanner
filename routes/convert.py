@@ -27,4 +27,4 @@ async def logout(
 
         final_text = translate_text(english_text)
 
-    return {"message": "Image uploaded..."}
+    return {"text": final_text}

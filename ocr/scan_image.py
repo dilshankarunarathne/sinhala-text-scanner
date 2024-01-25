@@ -63,4 +63,6 @@ def get_letters(image):
         ypred = LB.inverse_transform(ypred)
         [x] = ypred
         letters.append(x)
-    return letters, image
+        # Convert the list of letters to a numpy array and reshape it to a 2D array
+        letters_array = np.array(letters).reshape(-1, 1)
+    return letters_array, image

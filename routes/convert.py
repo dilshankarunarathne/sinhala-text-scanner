@@ -15,7 +15,9 @@ router = APIRouter(
 
 
 @router.post("/logout")
-async def logout(token: str = Depends(oauth2_scheme)):
+async def logout(
+        token: str = Depends(oauth2_scheme)
+):
     """
     The endpoint for logging out a user
 

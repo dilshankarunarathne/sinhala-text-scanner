@@ -1,9 +1,10 @@
 import requests
+from urllib.parse import urlencode
 
 
 def singlish_to_english(singlish_text: str) -> str:
     url = "https://easysinhalaunicode.com/api/convert"
-    data = {"data": singlish_text}
+    data = urlencode({"data": singlish_text})
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
 
     response = requests.post(url, data=data, headers=headers)

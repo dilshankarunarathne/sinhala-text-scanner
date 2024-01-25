@@ -14,7 +14,7 @@ router = APIRouter(
 )
 
 
-@router.post("/logout")
+@router.post("/")
 async def logout(
         token: str = Depends(oauth2_scheme)
 ):

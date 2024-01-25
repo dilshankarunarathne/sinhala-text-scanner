@@ -50,7 +50,11 @@ def get_letters(image):
             h+=10
             # cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 255), 2)
         roi = image[y:y + h, x:x + w]
-        ret, thresh = cv2.threshold(roi, 0, 255,cv2.THRESH_BINARY | cv2.THRESH_OTSU)  # use the second element of the tuple
+
+        # Convert the roi to grayscale
+        roi_gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+
+        ret, thresh = cv2.threshold(roi_gray, 0, 255,cv2.THRESH_BINARY | cv2.THRESH_OTSU)  # use the second element of the tuple
         thresh = cv2.resize(thresh, (80, 80), interpolation = cv2.INTER_CUBIC)
         thresh = thresh.astype("float32") / 255.0
         thresh = np.expand_dims(thresh, axis=-1)

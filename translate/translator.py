@@ -1,9 +1,8 @@
-from tkinter import *
-import tkinter as tk
-from tkinter import ttk
 from googletrans import Translator
 from tkinter import messagebox
+from tkinter import messagebox
 
+from googletrans import Translator
 
 
 def translate():

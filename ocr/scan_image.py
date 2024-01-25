@@ -12,6 +12,7 @@ img = cv2.imread('test.jpg',0)
 
 
 
+
 # Preprocess the image
 img = cv2.resize(img, (80,80))
 img_array = np.expand_dims(img, axis=0)

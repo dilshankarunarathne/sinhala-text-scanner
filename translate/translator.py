@@ -22,8 +22,6 @@ def translate():
 
 
 
-l = tk.StringVar()
-choose_language = ttk.Combobox(frame1, width=27, textvariable=l, state='randomly', font=('vendana', 10, 'bold'))
 
 choose_language['values'] = (
     'English',

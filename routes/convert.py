@@ -18,14 +18,5 @@ router = APIRouter(
 async def logout(
         token: str = Depends(oauth2_scheme)
 ):
-    """
-    The endpoint for logging out a user
-
-    Args:
-        token (oauth2 bearer token): the token for the user
-
-    Returns:
-        (dict) The message for logging out
-    """
     blacklist_token(token)
     return {"message": "Successfully logged out"}

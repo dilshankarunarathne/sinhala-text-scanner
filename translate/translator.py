@@ -4,7 +4,7 @@ from tkinter import messagebox
 from googletrans import Translator
 
 
-def translate(si_text):
+def translate(si_text: str):
     cl = choose_language.get()
 
     if si_text == '':

@@ -20,11 +20,7 @@ def translate():
 
 
 
-auto_select['values'] = (
-    'Auto Select',
-)
-auto_select.place(x=15, y=60)
-auto_select.current(0)
+
 
 l = tk.StringVar()
 choose_language = ttk.Combobox(frame1, width=27, textvariable=l, state='randomly', font=('vendana', 10, 'bold'))

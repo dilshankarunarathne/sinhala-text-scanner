@@ -17,3 +17,5 @@ img_array = img_array / 255.0
 
 # Make a prediction
 prediction = model.predict(img_array)
+
+

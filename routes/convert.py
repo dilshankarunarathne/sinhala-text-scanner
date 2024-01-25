@@ -3,6 +3,7 @@ import numpy as np
 
 from fastapi import APIRouter, File
 
+from ocr.scan_image import scan_image
 from singlish.converter import singlish_to_english
 from translate.translator import translate_text
 

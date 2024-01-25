@@ -12,7 +12,7 @@ def singlish_to_english(singlish_text: str) -> str:
     response = requests.post(url, data=data, headers=headers)
 
     if response.status_code == 200:
-        print("Singlish translation: ", response.text)
+        print("Singlish translation: ", response.text.encode('utf-8'))
         return response.text
     else:
         print(response.text)

@@ -15,7 +15,7 @@ def scan_image(img):
 
     img_array = cv2.imread(img,0)
 
-    prediction = model.predict(img_array)
+    prediction = get_letters(img_array)
 
     predicted_label = LB.inverse_transform(prediction)
     return predicted_label

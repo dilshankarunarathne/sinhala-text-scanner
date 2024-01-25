@@ -21,37 +21,6 @@ def translate():
 
 
 
-
-
-choose_language['values'] = (
-    'English',
-    'Sinhala',
-    'Tamil',
-    'Afrikaans',
-    'Albanian',
-    'Arabic',
-    'Bengali',
-    'Chinese',
-    'Corsican',
-    'Danish',
-    'Greek',
-    'Gujarati',
-    'Hindi',
-    'Japanese',
-    'Korean',
-    'Latin',
-    'Malagasy',
-    'Mongolian',
-    'Punjabi',
-    'Romanian',
-    'russian',
-    'Telugu',
-    'Zulu'
-)
-
-choose_language.place(x=305, y=60)
-choose_language.current(0)
-
 text_entry1 = Text(frame1, width=20, height=7, borderwidth=5, relief=RIDGE, font=('verdana', 15))
 text_entry1.place(x=10, y=100)
 
